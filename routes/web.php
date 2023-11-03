@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', function () {
+    return "Assalamualaikum selamat belajar laravel";
+});
+//tambah routing dengan parameter
+Route::get('/staff/{nama}/{divisi}', function($nama, $divisi){
+    return 'Nama Pegawai : '.$nama. '<br> Departemen : '.$divisi;
+});
+//routing dengan memanggil nama file dari view
+Route::get('/kondisi', function(){
+    return view('kondisi');
+});
+Route::get('/nilai', function(){
+    return view('coba.nilai');
+});
+//routing dengan view dan array data
+Route::get('/daftarnilai', function(){
+    return view('coba.daftar');
+});
